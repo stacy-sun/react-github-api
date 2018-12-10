@@ -12,12 +12,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 data: action.payload
             }
-        case types.RECEIVE_ISSUEDETAILS_ERROR:
-            console.log('RECEIVE_ISSUEDETAILS_ERROR', state);
-            return {
-                ...state,
-                data: action.payload
-            }
+        case types.CLEAR_STATE:
+            console.log('CLEAR_STATE', state);
+            return initialState;
         default:
             return state;
     }

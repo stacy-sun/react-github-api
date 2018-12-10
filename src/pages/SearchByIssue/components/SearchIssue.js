@@ -27,6 +27,10 @@ class SearchIssue extends Component {
         this.setState({ repo: '', issueNum: '' })
     }
 
+    handleClickClear = () => {
+        this.props.onClickClear();
+    }
+
     render() {
         return (
             <form onSubmit={this.state.repo && this.state.issueNum ? this.handleSubmit : null}>
@@ -36,13 +40,15 @@ class SearchIssue extends Component {
                 <label htmlFor='issueNum'>Enter an issue number: </label>
                 <input type='text' name='issueNum' id='issueNum' value={this.state.issueNum} onChange={this.handleIssueChange} />
                 <input type='submit' value='Submit' />
+                <input type='button' value='Clear Outputs' onClick={this.handleClickClear} />
             </form>
         )
     }
 }
 
 SearchIssue.propTypes = {
-    onSubmitIssue: PropTypes.func.isRequired
+    onSubmitIssue: PropTypes.func.isRequired,
+    onClickClear: PropTypes.func
 }
 
 export default SearchIssue;

@@ -1,4 +1,4 @@
-import { RECEIVE_REPOISSUE, RECEIVE_REPOISSUE_ERROR, RECEIVE_ISSUEDETAILS, RECEIVE_ISSUEDETAILS_ERROR } from './types.js';
+import { RECEIVE_REPOISSUE, RECEIVE_ISSUEDETAILS, CLEAR_STATE } from './types.js';
 
 export const receiveRepoIssue = payload => (
     {
@@ -7,13 +7,6 @@ export const receiveRepoIssue = payload => (
     }
 )
 
-export const receiveRepoIssueErr = payload => {
-    return {
-        type: RECEIVE_REPOISSUE_ERROR,
-        payload
-    }
-}
-
 export const receiveIssueDetails = payload => (
     {
         type: RECEIVE_ISSUEDETAILS,
@@ -21,9 +14,8 @@ export const receiveIssueDetails = payload => (
     }
 )
 
-export const receiveIssueDetailsErr = payload => {
-    return {
-        type: RECEIVE_ISSUEDETAILS_ERROR,
-        payload
+export const clearState = () => (
+    {
+        type: CLEAR_STATE,
     }
-}
+)
