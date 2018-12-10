@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Input extends Component {
+class SearchRepo extends Component {
     constructor(props) {
         super(props);
         this.state = { value: '' }
@@ -13,13 +13,13 @@ class Input extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.onSubmitForm(this.state.value);
+        this.props.onSubmitRepo(this.state.value);
         this.setState({ value: '' })
     }
 
     render() {
         return (
-            <form onSubmit={this.state.value ? this.handleSubmit : null }>
+            <form onSubmit={this.state.value ? this.handleSubmit : null}>
                 <label htmlFor='repo'>Enter a Facebook Repo name: </label>
                 <input type='text' name='repo' id='repo' value={this.state.value} onChange={this.handleChange} />
                 <input type='submit' value='Submit' />
@@ -28,8 +28,8 @@ class Input extends Component {
     }
 }
 
-Input.propTypes = {
-    onSubmitForm: PropTypes.func.isRequired
+SearchRepo.propTypes = {
+    onSubmitRepo: PropTypes.func.isRequired
 }
 
-export default Input;
+export default SearchRepo;

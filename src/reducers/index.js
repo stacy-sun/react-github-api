@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import issues from './issues';
+import issueList from './issueList';
+import issueDetails from './issueDetails';
 
 const reducers = combineReducers({
-    issues
+    issueList,
+    issueDetails
 });
 
 export default reducers;
